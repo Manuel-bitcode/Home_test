@@ -3,12 +3,12 @@ import { SocialPostActions } from './../constants/ActionTypes'
 import { GetPostData, GetPostDataSuccess, GetPostParams, Post, PostClean, PostResponseError } from './../constants/SocialPostInterface'
 
 
-const getPostData = (payload?: GetPostParams): GetPostData => ({
+const getPostData = (payload: GetPostParams): GetPostData => ({
   type: SocialPostActions.SOCIALPOST_DATA,
   payload
 })
 
-const getPostDataSucces = (payload: Array<Post>): GetPostDataSuccess => ({
+const getPostDataSuccess = (payload: Array<Post>): GetPostDataSuccess => ({
   type: SocialPostActions.SOCIALPOST_DATA_SUCCESS,
   payload
 })
@@ -24,7 +24,7 @@ const postClean = (): PostClean => ({
 
 export {
   getPostData,
-  getPostDataSucces,
+  getPostDataSuccess,
   postResponseError,
   postClean
 }

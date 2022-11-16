@@ -1,10 +1,8 @@
-import { ActionType } from '@redux-saga/types'
-import { AnyAction } from 'redux'
 import { ResponseError } from './CommonInterface'
 import { UserPost } from './UserPostInterface'
 
 interface Post {
-  id: number
+  id: string
   created_at: string
   text: string
   user: UserPost

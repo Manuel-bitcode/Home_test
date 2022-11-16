@@ -1,14 +1,14 @@
 import { AnyAction } from '@reduxjs/toolkit';
-import { getPostDataSucces, postResponseError } from './../actions/SocialPostActions';
+import { getPostDataSuccess, postResponseError } from './../actions/SocialPostActions';
 import { SocialPostActions } from './../constants/ActionTypes';
 import { takeEvery, call, put, fork, all } from 'redux-saga/effects'
-import { getPostResquest } from './../apis/SocialPostApi'
+import { getPostRequest } from './../apis/SocialPostApi'
 
-function* getPost(params: AnyAction) {
+export function* getPost(params: AnyAction) {
   const { payload } = params
   try {
-    const data = yield call(getPostResquest, payload)
-    yield put(getPostDataSucces(data))
+    const data = yield call(getPostRequest, payload)
+    yield put(getPostDataSuccess(data))
   } catch (error) {
     yield put(postResponseError(error))
   }

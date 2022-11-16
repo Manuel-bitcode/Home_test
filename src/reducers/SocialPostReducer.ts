@@ -3,7 +3,7 @@ import { Post } from '../constants/SocialPostInterface';
 import { CommonInitialState, ResponseError, statusType } from '../constants/CommonInterface';
 import { SocialPostActions } from '../constants/ActionTypes';
 
-interface InitialSocialPost extends CommonInitialState {
+export interface InitialSocialPost extends CommonInitialState {
   data: Array<Post>
 }
 
