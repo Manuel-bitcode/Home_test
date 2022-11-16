@@ -1,7 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
-const http = require('stream-http')
 const webpack = require('webpack')
 module.exports = {
   mode: 'development',
@@ -34,7 +32,6 @@ module.exports = {
       http: require.resolve('stream-http'),
       https: require.resolve('https-browserify'),
       stream: require.resolve('stream-browserify'),
-      crypto: require.resolve('crypto-browserify'),
       assert: require.resolve('assert'),
       os: require.resolve('os-browserify/browser'),
       url: require.resolve('url'),
