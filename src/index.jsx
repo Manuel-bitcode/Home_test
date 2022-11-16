@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import SocialPost from './container/SocialPost'
 
 import { createUseStyles } from 'react-jss';
+import { Provider } from 'react-redux';
+import store from './store'
 
 const useStyles = createUseStyles({
   '@global': {
@@ -27,9 +29,11 @@ const useStyles = createUseStyles({
 const App=()=>{
   useStyles()
   return(
-    <div className='App'>
-      <SocialPost></SocialPost>
-    </div>
+    <Provider store={store}>
+      <div className='App'>
+        <SocialPost></SocialPost>
+      </div>
+    </Provider>
   )
 }
 

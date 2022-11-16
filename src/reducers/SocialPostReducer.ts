@@ -21,7 +21,7 @@ export const socialPostReducer = (state: InitialSocialPost = initialStateSocialP
         status: 'loading'
       }
 
-    case SocialPostActions.SOCIALPOST_SUCCESS:
+    case SocialPostActions.SOCIALPOST_DATA_SUCCESS:
       return {
         ...state,
         status: 'success',
@@ -30,17 +30,17 @@ export const socialPostReducer = (state: InitialSocialPost = initialStateSocialP
         }
       }
 
-    case SocialPostActions.SOCIALPOST_ERROR:
+    case SocialPostActions.SOCIALPOST_DATA_ERROR:
       return {
         ...state,
-        status: 'success',
+        status: 'error',
         data: [] as Array<Post>,
         error: {
           ...action.payload
         }
       }
 
-    case SocialPostActions.SOCIALPOST_CLEAN:
+    case SocialPostActions.SOCIALPOST_DATA_CLEAN:
       return {
         ...state,
         data: initialStateSocialPost.data

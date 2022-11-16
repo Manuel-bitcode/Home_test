@@ -1,15 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+const http = require('stream-http')
+const webpack = require('webpack')
 module.exports = {
   mode: 'development',
   entry: './src/index.jsx',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js'
   },
-  devtool: 'inline-source-map',
   devServer: {
     static: './dist',
   },
@@ -28,11 +29,25 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx']
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    fallback: {
+      http: require.resolve('stream-http'),
+      https: require.resolve('https-browserify'),
+      stream: require.resolve('stream-browserify'),
+      crypto: require.resolve('crypto-browserify'),
+      assert: require.resolve('assert'),
+      os: require.resolve('os-browserify/browser'),
+      url: require.resolve('url'),
+      zlib: require.resolve('browserify-zlib'),
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html'
+    }),
+    new webpack.DefinePlugin({
+      process: { env: {} }
     })
+    // new NodePolyfillPlugin()
   ]
 }

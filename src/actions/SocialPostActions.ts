@@ -9,17 +9,17 @@ const getPostData = (payload?: GetPostParams): GetPostData => ({
 })
 
 const getPostDataSucces = (payload: Array<Post>): GetPostDataSuccess => ({
-  type: SocialPostActions.SOCIALPOST_DATA,
+  type: SocialPostActions.SOCIALPOST_DATA_SUCCESS,
   payload
 })
 
 const postResponseError = (payload: ResponseError): PostResponseError => ({
-  type: SocialPostActions.SOCIALPOST_ERROR,
+  type: SocialPostActions.SOCIALPOST_DATA_ERROR,
   payload
 })
 
 const postClean = (): PostClean => ({
-  type: SocialPostActions.SOCIALPOST_CLEAN
+  type: SocialPostActions.SOCIALPOST_DATA_CLEAN
 })
 
 export {
