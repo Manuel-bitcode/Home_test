@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+  "jsx": "react-jsx",
+  "outDir": "./dist/",
+  "moduleResolution": "node",
+  "baseUrl": "./src",
+ }
+}
