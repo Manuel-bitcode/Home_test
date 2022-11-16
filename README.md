@@ -1,0 +1,2 @@
+- To run project execute in terminal npm run start
+- To run test execute npm run test

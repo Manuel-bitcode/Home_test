@@ -2,7 +2,7 @@
   "compilerOptions": {
   "jsx": "react-jsx",
   "outDir": "./dist/",
-  "module": "commonjs",
+  "module": "CommonJS",
   "target": "es6",
   "baseUrl": "./src",
  }
