@@ -8,7 +8,6 @@ function* getPost(params: AnyAction) {
   const { payload } = params
   try {
     const data = yield call(getPostResquest, payload)
-    console.log(data)
     yield put(getPostDataSucces(data))
   } catch (error) {
     yield put(postResponseError(error))

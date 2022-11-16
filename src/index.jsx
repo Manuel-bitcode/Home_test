@@ -20,8 +20,8 @@ const useStyles = createUseStyles({
       width: '10px'
     },
     '*::-webkit-scrollbar-thumb': {
-    background: '#5C18FF',
-    borderRadius:'5px'
+      background: '#5C18FF',
+      borderRadius:'5px'
     }
   }
 });
@@ -31,7 +31,7 @@ const App=()=>{
   return(
     <Provider store={store}>
       <div className='App'>
-        <SocialPost></SocialPost>
+        <SocialPost feedUrl = 'http://api.massrelevance.com/MassRelDemo/kindle.json' postToDisplay ={5} intervalTime ={15000} />
       </div>
     </Provider>
   )

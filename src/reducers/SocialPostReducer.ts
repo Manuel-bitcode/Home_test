@@ -25,9 +25,9 @@ export const socialPostReducer = (state: InitialSocialPost = initialStateSocialP
       return {
         ...state,
         status: 'success',
-        data: {
+        data: [
           ...action.payload
-        }
+        ]
       }
 
     case SocialPostActions.SOCIALPOST_DATA_ERROR:

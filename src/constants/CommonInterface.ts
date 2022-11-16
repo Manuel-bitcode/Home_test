@@ -15,5 +15,5 @@ interface CommonInitialState {
 export {
   CommonInitialState,
   statusType,
-  ResponseError
+  ResponseError,
 }

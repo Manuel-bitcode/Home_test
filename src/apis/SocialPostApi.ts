@@ -2,7 +2,6 @@ import axios from 'axios';
 
 export const getPostResquest = async (parameters) => {
   const { url } = parameters
-  console.log(url)
   const paramsApi = {
     limit: parameters?.limit,
     // eslint-disable-next-line camelcase
@@ -16,9 +15,9 @@ export const getPostResquest = async (parameters) => {
       headers: {
         'Content-Type': 'application/json',
       },
+      params: paramsApi
     })
-    console.log(response)
-    return response
+    return response.data
   } catch (error) {
     return error.response
   }
